@@ -1,3 +1,5 @@
+#!/bin/bash
+
 declare -i treshold=$((1024**2)) 
 
 if [[ ! -z $1 ]]; then
