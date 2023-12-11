@@ -58,10 +58,9 @@ function updateSourceConfiguration {
 
 function updateBuildConfiguration {
 	numberOfUpdated=0
-	len=4
-	#$(jq '.pipeline.stages' $1).length
-
-	for (( i=0; i<${len}; i++ ));
+	length=$(jq '.pipeline.stages | length' $1)
+	
+	for (( i=0; i<${length}; i++ ));
 	do
         	hasKey=$(jq ".pipeline.stages[$i].actions[0].configuration | has(\"EnvironmentVariables\")" $updatedFile)
         	if ( $hasKey ); then

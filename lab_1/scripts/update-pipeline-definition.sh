@@ -1,13 +1,13 @@
 #!/bin/bash
 
-source ./pipeline-commands.sh 
+source ./pipeline-commands.sh
+
 declare -r RED="\033[0;31m"
 declare -r GREEN="\033[0;32m"
 declare -r END="\033[0m"
 
 curDate=$(date "+%Y-%m-%d")
 updatedFile="./pipeline-$curDate.json"
-
 
 checkJQ
 
